@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Course</title>
+</head>
+<body>
+<!--This page displays the result for the selected course and its index value/id in the URL-->
+<a href="/">Show All Courses</a>
+
+<p>Title: </p><span th:text="${course.title}"></span>
+<p>Credit(s): </p><span th:text="${course.credit}"></span>
+<p>Instructor: </p><span th:text="${course.instructor}"></span>
+<p>Description: </p>
+<p th:text="${course.description}"></p>
+
+<a th:href="@{/delete/{id}(id=${course.id})}">Delete Course</a>
+
+<!--No value displayed-->
+<!--    <div th:each="course, courseInfo :${courses}">
+        <p>Title: </p><span th:text="|courses[${courseInfo.index}].title|"></span>
+        <p>Credit: </p><span th:text="|courses[${courseInfo.index}].credit|"></span>
+        <p>Instructor: </p><span th:text="|courses[${courseInfo.index}].instructor|"></span>
+        <p>Description: </p><span th:text="|courses[${courseInfo.index}].description|"></span>
+    </div>-->
+
+<!--No value displayed-->
+<!--    <div th:each="courseInfo:${courses}">
+        <p>Title: </p><span th:text="${courseInfo.getTitle()}"></span>
+        <p>Credit(s): </p><span th:text="${courseInfo.getCredit()}"></span>
+        <p>Instructor: </p><span th:text="{courseInfo.getInstructor()}"></span>
+        <p>Description: </p><p th:text="${courseInfo.getDescription()}"></p>
+    </div>-->
+
+<!--Incorrect usage-->
+<!--    <div th:each="courseInfo:${courses}">
+        <p th:text="${courseInfo.title}"></p>
+        <p th:text="${courseInfo.credit}"></p>
+        <p th:text="${courseInfo.instructor}"></p>
+        <p th:text="${courseInfo.description}"></p>
+    </div>-->
+
+</body>
+</html>
